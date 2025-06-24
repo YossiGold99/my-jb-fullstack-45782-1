@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- * אגף מס הכנסה קבע מדרגות מס באופן הבא:
+    על כל שקל מ- 23,000 הש"ח הראשונים – שיעור המס הוא .10%
+    על כל שקל מ- 23,000 הש"ח הבאים – שיעור המס הוא .20%
+    על כל שקל מ- 74,000 הש"ח הבאים – שיעור המס הוא .30%
+    על כל שקל מ- 100,000 הש"ח הבאים – שיעור המס הוא .40%
+    על כל שקל נוסף – שיעור המס הוא .50%
+    שרטט תרשים עבור המשימה הבאה:
+    קלוט שם של עצמאי ואת הכנסתו.
+    הצג את הסכום שעל העצמאי לשלם למס הכנסה )קרא היטב את הגדרות המס. -->
+
+    <script>
+       const name = prompt('please enter your name');
+       const income = +prompt('please enter your income');
+       
+       let tax =0;
+
+       let remainingIncome;
+       let currentstepIncome
+        // 1st step 23,000 10%
+       remainingIncome = income = 23000
+       if (remainingIncome > 0) currentstepIncome = 23000
+       else currentstepIncome = income
+       tax = tax + 0.1 * currentstepIncome
+
+    //2nd step 23,000 20%
+        if ( remainingIncome >0){
+           
+            if (remainingIncome - 23000 > 0) currentstepIncome = 23000
+            else currentstepIncome = remainingIncome
+            console.log (`second step, currentstepIncome is ${currentstepIncome}`)
+
+            tax = tax + 0.2 * currentstepIncome
+            remainingIncome = remainingIncome = 23000
+        }
+
+
+       console.log('hi ${name}, your tax is ${tax}');
+
+    </script>
+</body>
+</html>
