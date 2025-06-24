@@ -1,3 +1,3 @@
-for (let current = 1; current <= 10; current ++) {
+for (let current = 1; current <= 10; current++) {
     document.write(`**********<br>`)
 }
