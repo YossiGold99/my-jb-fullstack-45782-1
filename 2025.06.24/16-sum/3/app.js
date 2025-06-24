@@ -10,4 +10,4 @@ while (input != 0) {
 }
 
 let avg= sum/count;
-alert(`${count === 0 ? : 'can not calculate without numbers' : sum/count }`)
+alert(`${count === 0 ?  'can not calculate without numbers' : sum/count }`)
