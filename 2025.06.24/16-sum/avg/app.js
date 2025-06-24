@@ -9,5 +9,5 @@ while (input != 0) {
     input = +prompt('please enter a number')
 }
 
-let avg= sum/count;
-alert(`${count === 0 ?  'can not calculate without numbers' : sum/count }`)
+let avg = sum / count;
+alert(`${count === 0 ? 'can not calculate without numbers' : sum / count}`)
