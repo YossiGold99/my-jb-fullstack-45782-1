@@ -1,13 +1,14 @@
-const worker = {
-  Name: "Israel",
-  LastName: "Israeli",
-  salary: 10000,
+const Book = {
+  author: "YossiG",
+  BookName: "the drak days",
+  pubkucation: "am oved",
+  pages: 215,
+  price: 100,
 };
-console.log(`the worker name is ${worker.Name} ${worker.LastName} and they earn ${worker.salary} nis`);
+console.log(Book);
 
-worker.address = prompt("Please enter your address")
-delete worker.LastName
-
-for (const prop in worker) {
-  console.log(`${prop}: ${worker[prop]}`);
-}
+const price = 100;
+const discountPercentage = 20;
+const discountAmount = price * (discountPercentage / 100);
+const finalPrice = price - discountAmount;
+console.log(`price after dicount is ${finalPrice}`)
