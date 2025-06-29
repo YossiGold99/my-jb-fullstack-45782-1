@@ -77,4 +77,5 @@ console.log(`dog age is ${dog.age}`);
 // for-in
 for (const property in dog) {
   console.log(property);
+  console.log(`${property}; ${dog[property]}`)
 }
