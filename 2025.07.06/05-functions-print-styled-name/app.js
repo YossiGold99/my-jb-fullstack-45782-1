@@ -1,19 +1,13 @@
-const firstName = prompt("enter firsr name");
-const lastNane = prompt("enter last naem");
+const firstName = prompt("enter first name");
+const lastName = prompt("enter last name");
 
-function printStyledledName (anyname){
-    console.log(`${anyname[0].toUpperCase}${anyname.substring(1)}`);
+function printStyledFirstName() {
+  console.log(`${firstName[0].toUpperCase()}${firstName.substring(1)}`);
 }
 
-// function printStyledFirstName() {
-//     console.log(`${firstName[0].toUpperCase()} ${firstName.substring}`);
-// }
+function printStyledLastName() {
+  console.log(`${lastName[0].toUpperCase()}${lastName.substring(1)}`);
+}
 
-// function printStyledlastName() {
-//     console.log(`${lastNane[0].toUpperCase()} ${lastNaneName.substring}`);
-// }
-
-// printStyledFirstName
-printStyledName(firstName);
-// printStyledlastName
-printStyledName(lastNane);
+printStyledFirstName();
+printStyledLastName();
