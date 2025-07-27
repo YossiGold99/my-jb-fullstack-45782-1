@@ -3,31 +3,41 @@
 (() => {
 
     const user = {
-        id:123,
-        name:'israel israeli'
+        id: 123,
+        name: 'israel israeli'
     }
 
-    const showUser =() => {
+    const showUser = () => {
         console.log('function started')
-        console.log(user)
-        console.log('function fiinished')
+        setTimeout(() => {
+            console.log(user)
+        }, 3000);
     }
-   
 
-    document.getElementById('show-user').addEventListener('click', () =>{
+    document.getElementById('show-user').addEventListener('click', () => {
         console.log('event started')
-        console.log()
-        console.log('function finished')
+        showUser()
+        console.log('event finished')
+    })
 
-    //////////////////////////////////////////
-    
-    
-    const getUser =() =>{
+    //////////////////////////////////
+    const getUser = () => {
         console.log('function started')
+        setTimeout(() => {
+            useCallback(user)
+        }, 3000)
         console.log('function finished')
-        return
+        return 'yossi'
     }
 
-    
+    document.getElementById('get-user').addEventListener('click', () => {
+        console.log('event started')
+        const user = getUser(user => {
+            console.log(user)
+        })
+        console.log(user)
+        console.log('event finished')
+
     })
+
 })()
