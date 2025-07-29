@@ -1,13 +1,25 @@
 "use strict";
 
 (async () => {
-    const getCurrentPosition = () => new Promise((resolve, reject) => {
+    const getUserLocation = () => new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject)
     })
 
+    const sleep = millisecondsToSleep => new Promise ((resolve,reject) => {
+        setTimeout(resolve, millisecondsToSleep);
+    })
+
     try {
-        const geo = await getUserLocation()
+        let geo = await getUserLocation()
         console.log(geo)
+        
+        // wait 5 seconds befir 2nd getCurrentPosition
+        await sleep(5 * 1000)
+
+        geo = await getUserLocation()
+        console.log(geo)
+
+
     } catch (err) {
         console.log(err)
     }
