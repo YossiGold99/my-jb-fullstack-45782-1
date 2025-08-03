@@ -13,8 +13,13 @@
     // generateHTML (process input)
     const generateUserHTML = (users) => {
         const html = users
-            .map(({ firstName, lastName }) => `<li>${firstName} ${lastName}</li>`)
-            // .reduce((cumulative, current) => `${cumulative} ${current}`, '')
+            .map(({ firstName, lastName, image }) =>
+                `<tr>
+                    <td>${firstName}</td>
+                    <td>${lastName}</td>
+                    <td><img src="${image}"width="50" ></td>
+                </tr>`
+            )
             .join('')
         return html
     }
@@ -30,10 +35,5 @@
     const users = await fetchUsers()
     const html = generateUserHTML(users)
     renderUserHTML(html)
-
-    // console.log(users)
-
-
-
 
 })()
