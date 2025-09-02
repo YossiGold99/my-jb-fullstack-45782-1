@@ -11,7 +11,7 @@ export default function Header() {
 
             </nav>
             <div>
-                welcome <Yossi></Yossi> | logout
+                welcome Yossi | logout
             </div>
         </div>
     )
