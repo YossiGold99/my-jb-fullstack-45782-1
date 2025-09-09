@@ -9,6 +9,3 @@ class FeedService {
 
 
 }
-
-const feedService = new FeedService()
-export default feedService
