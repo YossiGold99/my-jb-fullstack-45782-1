@@ -1,15 +1,9 @@
 import { useEffect, useState, type PropsWithChildren } from "react";
 import { io } from "socket.io-client";
-import type Post from "../../models/post";
-import type User from "../../models/user";
 import { useAppDispatcher, useAppSelector } from "../../redux/hooks";
-import { newPost } from "../../redux/profile-slice";
 import useUserId from "../../hooks/use-user-id";
-import { newFollower } from "../../redux/followers-slice";
-import { follow } from "../../redux/following-slice";
 import { v4 } from "uuid";
 import SocketDispatcherContext from "./SocketDispatcherContext";
-import { indicateNewContentAvailable } from "../../redux/feed-slice";
 import NewPostFeedDispacther from "./dispatchers/NewPostFeedDispatcher";
 import NewPostProfileDispacther from "./dispatchers/NewPostProfileDispatcher";
 
