@@ -1,0 +1,1 @@
+require('http').createServer(() => { ((request, Response) => Response.end('hello world')).listen(3000) })
