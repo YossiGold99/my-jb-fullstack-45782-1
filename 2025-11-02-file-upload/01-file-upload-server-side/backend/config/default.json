@@ -1,0 +1,27 @@
+{
+    "app": {
+        "port": 3000,
+        "name": "weezer dev",
+        "secret": "MySecret",
+        "jwtSecret": "JwtSecret"
+    },
+    "db": {
+        "host": "localhost",
+        "port": 3306,
+        "username": "root",
+        "password": "",
+        "database": "weezer"
+    },
+    "s3": {
+        "buket": "image.weezer.com",
+        "connction": {
+            "endpoint": "http://127.0.01:4566",
+            "region": "us-east-1",
+            "credentials": {
+                "accessKeyId": "test",
+                "secretAccessKey": "test"
+            },
+            "forcePathStyle": true
+        }
+    }
+}

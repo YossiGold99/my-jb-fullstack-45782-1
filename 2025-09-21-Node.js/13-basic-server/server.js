@@ -1,1 +1,1 @@
-require('http').createServer(() => { ((request, Response) => Response.end('hello world')).listen(3000) })
+require('http').createServer((request, response) => response.end('<h3>hello world</h3>')).listen(3000)

@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  return <div>hello yossi, first react app!</div>
+    return <div>hello shpizer, first react app!</div>
 }
 
 export default App

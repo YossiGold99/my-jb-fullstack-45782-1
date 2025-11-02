@@ -11,14 +11,14 @@ export default function Login() {
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
 
     const { register, handleSubmit } = useForm<LoginModel>()
+
     const authContext = useContext(AuthContext)
-    
+
     async function submit(login: LoginModel) {
         try {
             setIsSubmitting(true)
-            const jwt = await authService.login(login)
-            authContext?.setJwt(jwt)
-            alert("You are logged in!")
+            const { jwt } = await authService.login(login)
+            authContext?.newJwt(jwt)
         } catch (e) {
             alert(e)
         } finally {

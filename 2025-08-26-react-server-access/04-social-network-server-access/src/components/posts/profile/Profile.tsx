@@ -18,10 +18,6 @@ export default function Profile() {
                 alert(e)
             }
         })()
-
-        return () => {
-
-        }
     }, [])
 
     return (
