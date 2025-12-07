@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Simple Zoo</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: #111;
+                color: #eee;
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+
+            header {
+                padding: 30px 0;
+                font-size: 32px;
+                font-weight: bold;
+            }
+
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 20px;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .card {
+                background: #222;
+                border-radius: 8px;
+                padding: 10px;
+            }
+
+            .card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 6px;
+            }
+
+            .card h3 {
+                margin: 10px 0 5px 0;
+                font-size: 20px;
+            }
+
+            .card p {
+                font-size: 14px;
+                margin: 0;
+                color: #bbb;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <header>Golden Zoo</header>
+
+        <section class="gallery">
+
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Lion_%28Panthera_leo%29_male_6y.jpg/1000px-Lion_%28Panthera_leo%29_male_6y.jpg" alt="Lion">
+                <h3>Lion</h3>
+                <p>King of the savannah.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://cms.bbcearth.com//sites/default/files/factfiles/2024-07/el2.jpg" alt="Elephant">
+                <h3>Elephant</h3>
+                <p>Strong and gentle.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvJsIGE9WHBqGmzNAhs3-OJG8b08hhnn7uIA&s" alt="Tiger">
+                <h3>Tiger</h3>
+                <p>Fast and powerful.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://i.natgeofe.com/k/ed070a92-61f3-4905-a1c3-fc8bc373d40b/Giraffe_Moment-of-Yum_KIDS_0123.jpg?wp=1&w=1084.125&h=721.875" alt="Giraffe">
+                <h3>Giraffe</h3>
+                <p>Tallest animal in the zoo.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://media.cnn.com/api/v1/images/stellar/prod/160107100400-monkey-selfie.jpg?q=w_2912,h_1638,x_0,y_0,c_fill" alt="Monkey">
+                <h3>Monkey</h3>
+                <p>Curious and playful.</p>
+            </div>
+
+        </section>
+
+    </body>
+
+</html>

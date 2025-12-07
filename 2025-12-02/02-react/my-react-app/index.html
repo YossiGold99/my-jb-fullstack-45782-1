@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my-react-app</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        background: #111;
+        color: #eee;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      .header {
+        padding: 30px 0;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .card {
+        background: #222;
+        border-radius: 8px;
+        padding: 10px;
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script type="text/babel">
+      function App() {
+        const animals = [
+          { name: "Lion", img: "https://images.unsplash.com/photo-1599490659213-e2b9527bd087" },
+          { name: "Elephant", img: "https://images.unsplash.com/photo-1546182990-dffeafbe841d" },
+          { name: "Tiger", img: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131" },
+          { name: "Giraffe", img: "https://images.unsplash.com/photo-1508675801651-4170a0904a31" },
+          { name: "Monkey", img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" }
+        ];
+
+        return (
+          <>
+            <div className="header">Simple Zoo</div>
+            <div className="gallery">
+              {animals.map(a => (
+                <div className="card" key={a.name}>
+                  <img src={a.img} alt={a.name} />
+                  <h3>{a.name}</h3>
+                </div>
+              ))}
+            </div>
+          </>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Products with CORS</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+
+    <body>
+        <h1>Product List</h1>
+        <button id="loadBtn">Load Products</button>
+
+        <ul id="products"></ul>
+
+        <script>
+            const url = "http://127.0.0.1:5000";
+
+            document.getElementById("loadBtn").addEventListener("click", loadProducts);
+
+            async function loadProducts() {
+                try {
+                    const res = await axios.get(url, {
+                        withCredentials: false,
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    });
+
+                    const list = res.data;
+
+                    const container = document.getElementById("products");
+                    container.innerHTML = "";
+
+                    list.forEach(item => {
+                        const li = document.createElement("li");
+                        li.textContent = `${item.id} • ${item.name} • ${item.price}`;
+                        container.appendChild(li);
+                    });
+                } catch (err) {
+                    console.log("CORS error or other issue:", err);
+                }
+            }
+        </script>
+    </body>
+
+</html>
