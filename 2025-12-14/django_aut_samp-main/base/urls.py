@@ -9,7 +9,8 @@ urlpatterns = [
     path('hello', views.hello),
     path('pri_test', views.only_mem),
     path('test', views.test),
-    path('login',TokenObtainPairView.as_view() ), # routh login
+    # path('login',TokenObtainPairView.as_view() ), # routh login
+    path('login',views.MyTokenObtainPairSerializer), # custom routh login
     path('register', views.register_user),#Register
     
 ]

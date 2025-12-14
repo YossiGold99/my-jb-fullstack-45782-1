@@ -6,6 +6,23 @@ from django.contrib.auth.models import User
 from rest_framework import permissions
 from rest_framework.decorators import  permission_classes
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView #Login
+
+class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+        # Add custom coloms
+        token['username'] = user.username
+        token['email'] = user.email
+        token['waga'] = "baga"
+        # ...
+
+
+        return token
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
