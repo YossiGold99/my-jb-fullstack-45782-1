@@ -24,16 +24,7 @@ def myimage_list_create(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-
-
-
-
-
-
-
-
+#IsAdmin
 
 @api_view(['GET'])
 def index(req):
