@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Gemini Agent Selector</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f4f4f9;
+            }
+
+            .container {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                color: #333;
+                text-align: center;
+            }
+
+            textarea {
+                width: 100%;
+                height: 100px;
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+
+            .options {
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                font-size: 16px;
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+            .result {
+                background: #e8f5e9;
+                padding: 15px;
+                border-right: 5px solid #4CAF50;
+                margin-top: 20px;
+                white-space: pre-wrap;
+            }
+
+            .history-item {
+                border-bottom: 1px solid #ddd;
+                padding: 10px 0;
+                font-size: 0.9em;
+                color: #555;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h1>שאל את Gemini</h1>
+
+            <form method="POST">
+                {% csrf_token %}
+                <label>השאלה שלך:</label>
+                <textarea name="question" required placeholder="כתוב כאן..."></textarea>
+
+                <div class="options">
+                    <label>
+                        <input type="radio" name="agent_type" value="fast" checked>
+                        🚀 סוכן מהיר (Flash)
+                    </label>
+                    <label>
+                        <input type="radio" name="agent_type" value="accurate">
+                        🧠 סוכן מדויק (Pro)
+                    </label>
+                </div>
+
+                <button type="submit">שלח שאלה</button>
+            </form>
+
+            {% if result %}
+            <div class="result">
+                <h3>תשובה:</h3>
+                {{ result }}
+            </div>
+            {% endif %}
+
+            <hr>
+            <h3>היסטוריית שאלות אחרונות:</h3>
+            {% for item in history %}
+            <div class="history-item">
+                <strong>ש:</strong> {{ item.question }} <br>
+                <small>({{ item.get_agent_type_display }})</small>
+            </div>
+            {% endfor %}
+        </div>
+
+    </body>
+
+</html>
